@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T14:05:00+08:00",
+  "title": "Design System: 瘦身大作战 SlimQuest",
+  "extensions": {
+    "colorMeta": {
+      "berry": { "role": "primary", "displayName": "草莓糖", "canonical": "#FF5D8F", "tonalRamp": ["#7A1D3B", "#A32250", "#C92F60", "#DE4474", "#FF5D8F", "#FF8DB4", "#FFB3CC", "#FFD9E4"] },
+      "mint": { "role": "primary", "displayName": "薄荷糖", "canonical": "#2ED3A3", "tonalRamp": ["#074D3B", "#0A6B50", "#0E8F6C", "#17A583", "#2ED3A3", "#75E6C6", "#A9F0DC", "#D8F9EF"] },
+      "tange": { "role": "secondary", "displayName": "蜜橘糖", "canonical": "#FF9838", "tonalRamp": ["#7A400A", "#A34F0D", "#C26A12", "#DE7D24", "#FF9838", "#FFBE73", "#FFD1A1", "#FFE8CC"] },
+      "lemon": { "role": "secondary", "displayName": "柠檬糖", "canonical": "#FFC93C", "tonalRamp": ["#5E4509", "#7A5800", "#9A7410", "#BE8F1F", "#FFC93C", "#FFDE7A", "#FFF0B3", "#FFF8DC"] },
+      "grape": { "role": "tertiary", "displayName": "葡萄糖", "canonical": "#9D6CFF", "tonalRamp": ["#3D2670", "#6640B8", "#9D6CFF", "#B995FF", "#D4BEFF", "#E8DCFF", "#F3EDFF", "#FAF6FF"] },
+      "sky": { "role": "tertiary", "displayName": "天空糖", "canonical": "#4FC3F7", "tonalRamp": ["#154D68", "#2381AC", "#4FC3F7", "#8AD6F9", "#B5E4FA", "#D8F1FC", "#EAF8FE", "#F5FBFF"] },
+      "ink": { "role": "neutral", "displayName": "可可紫墨", "canonical": "#3F2E4F", "tonalRamp": ["#241A2E", "#3F2E4F", "#5A446E", "#8A7799", "#A99BBA", "#B3A4BF", "#D4CADF", "#EFE9F5"] },
+      "bg": { "role": "neutral", "displayName": "奶油底", "canonical": "#FFF4E3", "tonalRamp": ["#8A6C42", "#C9A76F", "#E6D3B2", "#F0E2CB", "#F7EBD4", "#FFF4E3", "#FFF9EE", "#FFFDF7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "黄油体", "purpose": "全部标题、按钮、庆祝文案（ZCOOL QingKe HuangYou 自托管）" },
+      "body": { "displayName": "系统圆体", "purpose": "正文与提示，长可读性" },
+      "num": { "displayName": "糖果数字", "purpose": "分数/天数/等级，Baloo 2 800，tabular-nums" }
+    },
+    "shadows": [
+      { "name": "card-soft", "value": "0 10px 24px rgba(94,60,115,0.10), 0 3px 8px rgba(94,60,115,0.06)", "purpose": "贴纸卡片的柔和偏移投影" },
+      { "name": "pop", "value": "0 14px 30px rgba(94,60,115,0.16)", "purpose": "悬浮件（TabBar、弹窗卡）" },
+      { "name": "jelly-berry", "value": "0 6px 0 #A32250, 0 16px 30px rgba(194,53,96,0.35)", "purpose": "草莓果冻 CTA 的底边挤出" },
+      { "name": "jelly-mint", "value": "0 6px 0 #0A6B50, 0 16px 30px rgba(14,143,108,0.32)", "purpose": "薄荷果冻 CTA" }
+    ],
+    "motion": [
+      { "name": "overshoot", "value": "cubic-bezier(0.34, 1.56, 0.64, 1) 0.16-0.4s", "purpose": "点选/悬停的果冻过冲（动物园导览图捐助的运动语法）" },
+      { "name": "spring-pop", "value": "spring stiffness 480 damping 15", "purpose": "宝石/徽章入场弹出" },
+      { "name": "settle", "value": "cubic-bezier(0.22, 1.2, 0.36, 1) 0.4-0.6s", "purpose": "进度条与计量填充" },
+      { "name": "rays-spin", "value": "conic-gradient 14s linear infinite", "purpose": "庆祝弹窗光芒" }
+    ],
+    "breakpoints": [
+      { "name": "app-column", "value": "max-width 430px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Jelly CTA (strawberry)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "主行动果冻大按钮：完成打卡。",
+      "html": "<button class=\"ds-cta\">完成今日打卡</button>",
+      "css": ".ds-cta { display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:16px; border-radius:20px; background:linear-gradient(180deg,#DE4474,#C92F60); color:#fff; font-size:21px; letter-spacing:.06em; box-shadow:0 6px 0 #A32250, 0 16px 30px rgba(194,53,96,.35); transition:transform .14s cubic-bezier(.34,1.56,.64,1), box-shadow .14s; } .ds-cta:hover { filter:brightness(1.04); } .ds-cta:active { transform:translateY(5px); box-shadow:0 1px 0 #A32250; } .ds-cta:focus-visible { outline:3px solid #FF9FBF; outline-offset:2px; }"
+    },
+    {
+      "name": "Candy Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "打卡选项chip：时间/食量/饮料；选中变草莓果冻。",
+      "html": "<button class=\"ds-chip ds-chip-on\">17 点</button> <button class=\"ds-chip\">18 点</button>",
+      "css": ".ds-chip { display:inline-flex; align-items:center; gap:7px; padding:9px 13px; border-radius:15px; border:2px solid #F0E2CB; background:#fff; color:#3F2E4F; font-weight:600; font-size:14.5px; box-shadow:0 3px 0 rgba(94,60,115,.06); transition:transform .16s cubic-bezier(.34,1.56,.64,1), background .2s, color .2s; } .ds-chip:active { transform:translateY(2px) scale(.97); } .ds-chip-on { background:linear-gradient(180deg,#DE4474,#C92F60); border-color:#C92F60; color:#fff; box-shadow:0 3px 0 #A32250; }"
+    },
+    {
+      "name": "Sticker Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "贴纸卡片：判定卡/成就卡/统计卡的容器。",
+      "html": "<div class=\"ds-card\"><h3 style=\"margin:0;font-size:19px\">当日判定</h3></div>",
+      "css": ".ds-card { background:#fff; border-radius:18px; border:2px solid #F0E2CB; box-shadow:0 10px 24px rgba(94,60,115,.10), 0 3px 8px rgba(94,60,115,.06); padding:16px; color:#3F2E4F; }"
+    },
+    {
+      "name": "Tab Bar",
+      "kind": "nav",
+      "description": "底部悬浮胶囊导航：今日/日历/成就/统计。",
+      "html": "<nav class=\"ds-tabbar\"><button class=\"ds-tab ds-tab-on\">今日</button><button class=\"ds-tab\">日历</button></nav>",
+      "css": ".ds-tabbar { display:grid; grid-auto-flow:column; gap:0; background:rgba(255,252,245,.92); backdrop-filter:blur(12px); border:2px solid #E6D3B2; border-radius:22px; box-shadow:0 14px 30px rgba(94,60,115,.16); padding:6px; } .ds-tab { display:flex; flex-direction:column; align-items:center; gap:2px; padding:7px 18px 6px; border-radius:16px; font-size:11.5px; font-weight:700; color:#B3A4BF; transition:background .2s, color .2s, transform .16s cubic-bezier(.34,1.56,.64,1); } .ds-tab:active { transform:scale(.88); } .ds-tab-on { background:linear-gradient(180deg,#DE4474,#C92F60); color:#fff; box-shadow:0 3px 0 #A32250; }"
+    },
+    {
+      "name": "Gem (signature)",
+      "kind": "custom",
+      "description": "六色六形宝石：成功日的棋子，连续3颗同色=一次消除。",
+      "html": "<svg class=\"ds-gem\" width=\"36\" height=\"36\" viewBox=\"0 0 64 64\"><defs><linearGradient id=\"dsg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#FFB3CC\"/><stop offset=\".45\" stop-color=\"#FF5D8F\"/><stop offset=\"1\" stop-color=\"#C23364\"/></linearGradient></defs><polygon points=\"32,6 53,18 53,46 32,58 11,46 11,18\" fill=\"url(#dsg)\" stroke=\"#C23364\" stroke-width=\"3\" stroke-linejoin=\"round\"/><polygon points=\"32,6 53,18 32,30 11,18\" fill=\"#FFB3CC\" opacity=\".55\"/><ellipse cx=\"22\" cy=\"20\" rx=\"5\" ry=\"7\" transform=\"rotate(-24 22 20)\" fill=\"#fff\" opacity=\".75\"/></svg>",
+      "css": ".ds-gem { filter:drop-shadow(0 2px 2px rgba(94,60,115,.18)); }"
+    },
+    {
+      "name": "Exercise Cell (mint toggle)",
+      "kind": "chip",
+      "description": "运动图标格：多选薄荷果冻开关。",
+      "html": "<button class=\"ds-ex ds-ex-on\">健身房</button> <button class=\"ds-ex\">跑步</button>",
+      "css": ".ds-ex { display:inline-flex; flex-direction:column; align-items:center; gap:5px; padding:11px 16px 9px; border-radius:16px; border:2px solid #F0E2CB; background:#fff; color:#8A7799; font-size:12.5px; font-weight:600; box-shadow:0 3px 0 rgba(94,60,115,.06); transition:transform .16s cubic-bezier(.34,1.56,.64,1), background .2s; } .ds-ex:active { transform:scale(.94); } .ds-ex-on { background:linear-gradient(180deg,#17A583,#0E8F6C); border-color:#0E8F6C; color:#fff; box-shadow:0 3px 0 #0A6B50; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "装在手机里的糖果街机",
+    "overview": "日历即棋盘：每天的成功是一颗六色宝石，连续三天同色即一次「消除」，坚持的天数本身是收集物。系统把休闲消除游戏的物理质感（果冻按钮按压位移、宝石高光切面、贴纸卡片可可描边）搬到健康打卡界面，用游戏机外壳包裹最小记录摩擦。全部材质为手绘矢量几何，不模仿照片材质。",
+    "keyCharacteristics": [
+      "奶油底 + 六色宝石 + 可可紫墨水",
+      "果冻控件（按压下沉、深色底边挤出）与贴纸卡片（2px 描边 + 柔和偏移投影）双材质系统",
+      "全部动效 0.4s 内过冲回落，庆祝时刻才动用全屏彩带",
+      "数值一律 Baloo 2 表格数字；标题一律黄油体"
+    ],
+    "rules": [
+      { "name": "The Two-Accent Rule", "body": "单屏同时高亮的强调色不超过两种语义：草莓=行动，薄荷=成功。其余四色只在宝石、图表与徽章里。", "section": "colors" },
+      { "name": "The Ink-on-Candy Rule", "body": "糖果色块上的文字永远是纯白或该色 deep 变体（对比 ≥4.5:1），从不用灰字贴彩底。", "section": "colors" },
+      { "name": "The Candy Ceiling Rule", "body": "黄油体只到 44px；再大改用 Baloo 2 数字或加装饰图标，不放大中文字标。", "section": "typography" },
+      { "name": "The One-Depth Rule", "body": "一个元素只声明一种 elevation：贴纸（描边+柔影）或果冻（挤出），混用即鬼卡。", "section": "elevation" }
+    ],
+    "dos": [
+      "Do 保持庆祝的正向语气：失败日用「明天赢回来」话术，从不用红色警告横幅",
+      "Do 让每个点选都有物理回应：chip/图标格 :active 缩放 + 选中 spring 过冲",
+      "Do 数字用 Baloo 2 tabular-nums",
+      "Do 新增图标进统一集（viewBox 24 / stroke 2.1 / 圆头）"
+    ],
+    "donts": [
+      "Don't 在糖果色块上放灰字或渐变文字；不用 1px 发丝描边配宽柔影",
+      "Don't 给卡片加单侧彩色粗边（side-tab）",
+      "Don't 用 emoji 充当界面图标",
+      "Don't 打断式弹窗用于非庆祝信息；修改/补卡走底部抽屉"
+    ]
+  }
+}
